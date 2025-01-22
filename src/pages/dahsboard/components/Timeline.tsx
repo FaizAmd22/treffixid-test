@@ -40,7 +40,7 @@ const Timeline: React.FC = () => {
       <div>
         {timelineData.map((item, index) => (
           <div key={index}>
-            <div className="flex justify-between items-start py-3">
+            <div className="flex-1 lg:flex justify-between items-start py-3">
               <div className="flex items-start">
                 <div
                   className={`w-3 h-3 rounded-full mt-1 mr-4 ${
