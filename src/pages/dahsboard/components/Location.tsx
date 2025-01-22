@@ -29,7 +29,10 @@ const Location: React.FC = () => {
     return savedLastUpdated || new Date().toLocaleString();
   });
 
+  const [isFetchingAddress, setIsFetchingAddress] = useState<boolean>(false);
+
   const fetchAddress = async (lat: number, lon: number) => {
+    setIsFetchingAddress(true);
     try {
       const response = await fetch(
         `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&addressdetails=1`
@@ -49,6 +52,8 @@ const Location: React.FC = () => {
       const fallbackError = "Failed to fetch address";
       setAddress(fallbackError);
       localStorage.setItem("address", fallbackError);
+    } finally {
+      setIsFetchingAddress(false);
     }
   };
 
@@ -87,12 +92,14 @@ const Location: React.FC = () => {
             attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
           <Marker position={coordinates} icon={carIcon}>
-            <Popup>{address}</Popup>
+            <Popup>{isFetchingAddress ? "Loading..." : address}</Popup>
           </Marker>
         </MapContainer>
 
         <div className="flex flex-col lg:flex-row justify-between mt-4 gap-8 mb-5">
-          <p className="w-full lg:w-[75%]">{address}</p>
+          <p className="w-full lg:w-[75%]">
+            {isFetchingAddress ? "Loading address..." : address}
+          </p>
           <p className="w-full lg:w-[25%] lg:text-right">
             Last Updated: {lastUpdated}
           </p>

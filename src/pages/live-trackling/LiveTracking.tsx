@@ -37,7 +37,10 @@ const LiveTracking: React.FC = () => {
     return savedLastUpdated || new Date().toLocaleString();
   });
 
+  const [isFetchingAddress, setIsFetchingAddress] = useState<boolean>(false);
+
   const fetchAddress = async (lat: number, lon: number) => {
+    setIsFetchingAddress(true);
     try {
       const response = await fetch(
         `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&addressdetails=1`
@@ -57,6 +60,8 @@ const LiveTracking: React.FC = () => {
       const fallbackError = "Failed to fetch address";
       setAddress(fallbackError);
       localStorage.setItem("address", fallbackError);
+    } finally {
+      setIsFetchingAddress(false);
     }
   };
 
@@ -70,6 +75,10 @@ const LiveTracking: React.FC = () => {
     setLastUpdated(updatedTime);
     localStorage.setItem("lastUpdated", updatedTime);
   };
+
+  useEffect(() => {
+    fetchAddress(coordinates[0], coordinates[1]);
+  }, [coordinates]);
 
   return (
     <div className="h-[80%] px-10">
@@ -106,12 +115,14 @@ const LiveTracking: React.FC = () => {
             },
           }}
         >
-          <Popup>{address}</Popup>
+          <Popup>{isFetchingAddress ? "Loading..." : address}</Popup>
         </Marker>
       </MapContainer>
 
       <div className="flex flex-col lg:flex-row justify-between mt-4 gap-8 mb-5">
-        <p className="w-full lg:w-[75%]">{address}</p>
+        <p className="w-full lg:w-[75%]">
+          {isFetchingAddress ? "Loading address..." : address}
+        </p>
         <p className="w-full lg:w-[25%] lg:text-right">
           Last Updated: {lastUpdated}
         </p>
