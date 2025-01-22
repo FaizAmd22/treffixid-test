@@ -26,7 +26,7 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
   return (
     <div className="flex justify-between items-center">
       <div className="flex items-center gap-3">
-        <div className="w-[65px] h-[65px] rounded-lg box-shadow-sm">
+        <div className="w-[40px] h-[40px] lg:w-[65px] lg:h-[65px] rounded-lg box-shadow-sm">
           <img
             src={Car}
             alt="car"
@@ -35,7 +35,7 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
         </div>
 
         <div>
-          <p className="font-semibold text-2xl w-[250px]">
+          <p className="font-semibold text-xl lg:text-2xl w-[250px]">
             {!isLoading ? userData?.name : Skeleton()}
           </p>
           <p className="w-[250px] pt-2">
@@ -45,7 +45,7 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
       </div>
 
       <div className="hidden lg:flex items-center gap-5">
-        <button className="bg-white h-[50px] w-[50px] flex items-center justify-center rounded-lg box-shadow-sm">
+        <button className="bg-white h-[40px] w-[40px] flex items-center justify-center rounded-lg box-shadow-sm">
           <HiOutlineDotsVertical size={"20px"} />
         </button>
 
