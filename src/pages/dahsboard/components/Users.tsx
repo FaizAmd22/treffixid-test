@@ -27,7 +27,7 @@ const Users = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-white">
       <h2 className="text-2xl font-semibold mb-4">Details</h2>
 
       <div className="grid lg:grid-cols-3 grid-cols-2 border-b py-2">

@@ -8,7 +8,7 @@ const Behavior = () => {
     dataBehavior.length > 1 ? dataBehavior[dataBehavior.length - 2] : undefined;
 
   return (
-    <>
+    <div className="bg-white">
       <div className="w-full flex justify-between">
         <h2 className="text-2xl font-semibold pb-5">Driver Behavior</h2>
         <Link to={"/drive-behavior"} className="text-blue-500 hover:underline">
@@ -19,7 +19,7 @@ const Behavior = () => {
         data={latestData}
         previousPercentage={previousData ? previousData.percentage : undefined}
       />
-    </>
+    </div>
   );
 };
 

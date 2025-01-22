@@ -35,7 +35,7 @@ const Timeline: React.FC = () => {
   }
 
   return (
-    <>
+    <div className="bg-white">
       <h2 className="text-2xl font-semibold pb-5">Driver Activity Timeline</h2>
       <div>
         {timelineData.map((item, index) => (
@@ -71,7 +71,7 @@ const Timeline: React.FC = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
