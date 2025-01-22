@@ -10,13 +10,15 @@ interface userNavbarProps {
 
 const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
   const [userData, setUserData] = useState<userInterface | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     setTimeout(() => {
       const storedData = localStorage.getItem("userDetails");
 
       if (storedData) {
-        setUserData(JSON.parse(storedData));
+          setUserData(JSON.parse(storedData));
+          setIsLoading(false)
       }
     }, 500);
   }, []);
@@ -34,10 +36,10 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
 
         <div>
           <p className="font-semibold text-2xl w-[250px]">
-            {userData ? userData.name : Skeleton()}
+            {!isLoading ? userData?.name : Skeleton()}
           </p>
           <p className="w-[250px] pt-2">
-            {userData ? userData.phoneNumber : Skeleton()}
+            {!isLoading ? userData?.phoneNumber : Skeleton()}
           </p>
         </div>
       </div>
