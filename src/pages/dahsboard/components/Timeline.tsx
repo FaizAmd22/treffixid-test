@@ -37,7 +37,7 @@ const Timeline: React.FC = () => {
               <div className="flex items-start">
                 <div
                   className={`w-3 h-3 rounded-full mt-1 mr-4 ${
-                    isLoading ? "bg-gray-300 animate-pulse" : item.color
+                    isLoading ? "bg-gray-300 animate-pulse" : `bg-${item.color}-500`
                   }`}
                 />
 
