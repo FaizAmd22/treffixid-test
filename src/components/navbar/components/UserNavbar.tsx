@@ -17,16 +17,16 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
       const storedData = localStorage.getItem("userDetails");
 
       if (storedData) {
-          setUserData(JSON.parse(storedData));
-          setIsLoading(false)
+        setUserData(JSON.parse(storedData));
+        setIsLoading(false);
       }
     }, 500);
   }, []);
 
   return (
     <div className="flex justify-between items-center">
-      <div className="flex items-center gap-3 w-[70%] lg:w-[100%]">
-        <div className="w-[45px] h-[45px] lg:w-[65px] lg:h-[65px] rounded-lg box-shadow-sm">
+      <div className="flex items-center gap-3 bg-red-400 w-[50%] lg:w-[100%]">
+        <div className="w-[50px] h-[50px] lg:w-[65px] lg:h-[65px] rounded-lg box-shadow-sm">
           <img
             src={Car}
             alt="car"
@@ -35,7 +35,7 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
         </div>
 
         <div>
-          <p className="font-semibold text-lg lg:text-2xl w-[250px]">
+          <p className="font-semibold text-lg lg:text-2xl w-[250px] mb-[-2px] lg:mb-0">
             {!isLoading ? userData?.name : Skeleton()}
           </p>
           <p className="w-[250px] text-sm lg:text-base pt-2">
