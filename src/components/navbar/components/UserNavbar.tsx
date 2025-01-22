@@ -35,17 +35,17 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
         </div>
 
         <div>
-          <p className="font-semibold text-xl lg:text-2xl w-[250px]">
+          <p className="font-semibold text-lg lg:text-2xl w-[250px]">
             {!isLoading ? userData?.name : Skeleton()}
           </p>
-          <p className="w-[250px] pt-2">
+          <p className="w-[250px] text-sm lg:text-base pt-2">
             {!isLoading ? userData?.phoneNumber : Skeleton()}
           </p>
         </div>
       </div>
 
       <div className="hidden lg:flex items-center gap-5">
-        <button className="bg-white h-[40px] w-[40px] flex items-center justify-center rounded-lg box-shadow-sm">
+        <button className="bg-white h-[30px] w-[30px] flex items-center justify-center rounded-lg box-shadow-sm">
           <HiOutlineDotsVertical size={"20px"} />
         </button>
 

@@ -78,7 +78,7 @@ const Navbar = () => {
 
       {isMenuOpen && (
         <div
-          className="absolute w-[88%] border-2 rounded-lg lg:hidden bg-white p-4 mt-2 right-10"
+          className="absolute w-[90%] border-2 rounded-lg lg:hidden bg-white p-4 mt-2 right-0"
           style={{ zIndex: 9999 }}
         >
           <div className="flex flex-col gap-4">
