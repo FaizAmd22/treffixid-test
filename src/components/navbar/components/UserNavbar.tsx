@@ -12,11 +12,13 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
   const [userData, setUserData] = useState<userInterface | null>(null);
 
   useEffect(() => {
-    const storedData = localStorage.getItem("userDetails");
+    setTimeout(() => {
+      const storedData = localStorage.getItem("userDetails");
 
-    if (storedData) {
-      setUserData(JSON.parse(storedData));
-    }
+      if (storedData) {
+        setUserData(JSON.parse(storedData));
+      }
+    });
   }, []);
 
   return (
