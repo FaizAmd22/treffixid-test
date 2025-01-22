@@ -76,7 +76,7 @@ const Location: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-[500px] lg:h-full bg-white">
+    <div className="h-[600px] lg:h-full bg-white">
       <h2 className="text-2xl font-semibold pb-5">Last Location</h2>
 
       <div className="h-[60%] lg:h-[76%]">
