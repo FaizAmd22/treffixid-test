@@ -1,0 +1,28 @@
+[
+    {
+        "months": "december",
+        "total_trips": 30,
+        "percentage": 95.5,
+        "dataMetric": [
+            { "point": "20", "label": "Overspeed" },
+            { "point": "45", "label": "Harsh Acc" },
+            { "point": "10", "label": "Harsh Brake" },
+            { "point": "35", "label": "Harsh Cornering" },
+            { "point": "15", "label": "Overstay" },
+            { "point": "30", "label": "Geofence Out" }
+        ]
+        },
+    {
+        "months": "january",
+        "total_trips": 28,
+        "percentage": 91.2,
+        "dataMetric": [
+            { "point": "24", "label": "Overspeed" },
+            { "point": "50", "label": "Harsh Acc" },
+            { "point": "12", "label": "Harsh Brake" },
+            { "point": "38", "label": "Harsh Cornering" },
+            { "point": "12", "label": "Overstay" },
+            { "point": "38", "label": "Geofence Out" }
+        ]
+    }
+]

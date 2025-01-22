@@ -1,0 +1,26 @@
+[
+    {
+        "title": "12 Invoices have been paid",
+        "description": "Invoices have been paid to the company",
+        "time": "12 min ago",
+        "color": "red"
+    },
+    {
+        "title": "Meeting with John",
+        "description": "Project meeting with John @10:15am",
+        "time": "45 min ago",
+        "color": "blue"
+    },
+    {
+        "title": "Create a new react project for client",
+        "description": "5 team members in a project",
+        "time": "2 day ago",
+        "color": "yellow"
+    },
+    {
+        "title": "Create a new react project for client",
+        "description": "5 team members in a project",
+        "time": "2 day ago",
+        "color": "yellow"
+    }
+]

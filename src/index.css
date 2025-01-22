@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #FBFBFB;
+}
+
+.box-shadow-sm {
+  box-shadow: 0px 1px 3px #1f1f1f79;
+}
+
+.box-shadow {
+  box-shadow: 0px 1px 10px #7e7e7e2d;
+}
+
+.custom-icon {
+  background: none !important;
+  border: none !important;
+}
