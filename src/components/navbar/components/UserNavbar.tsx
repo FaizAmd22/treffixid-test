@@ -18,7 +18,7 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
       if (storedData) {
         setUserData(JSON.parse(storedData));
       }
-    });
+    }, 500);
   }, []);
 
   return (
