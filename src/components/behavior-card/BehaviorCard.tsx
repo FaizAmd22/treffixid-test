@@ -74,7 +74,7 @@ const BehaviorCard: React.FC<BehaviorCardProps> = ({
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6 text-center">
         {data.dataMetric.map((metric, index) => (
-          <div key={index} className="flex gap-4">
+          <div key={index} className="flex gap-4 items-center">
             <p className="font-semibold text-gray-800 w-fit bg-slate-100 p-2 px-3 rounded-lg">
               {metric.point}
             </p>
