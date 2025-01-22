@@ -59,7 +59,7 @@ const Navbar = () => {
         <UserNavbar openModal={openModal} />
 
         <button
-          className="lg:hidden bg-gray-100 p-3 rounded-lg"
+          className="lg:hidden bg-gray-100 p-3 rounded-lg mt-[-20px]"
           onClick={toggleMenu}
         >
           {isMenuOpen ? (

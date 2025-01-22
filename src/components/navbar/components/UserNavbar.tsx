@@ -25,7 +25,7 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
 
   return (
     <div className="flex justify-between items-center">
-      <div className="flex items-center gap-3 bg-red-400 w-[50%] lg:w-[100%]">
+      <div className="flex items-center gap-3">
         <div className="w-[50px] h-[50px] lg:w-[65px] lg:h-[65px] rounded-lg box-shadow-sm">
           <img
             src={Car}
