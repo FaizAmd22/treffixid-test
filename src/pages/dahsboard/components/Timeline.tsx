@@ -3,6 +3,13 @@ import dataTimeline from "@/data/timeline.json";
 import { TimelineInterface } from "@/interface/timelineInterface";
 import Skeleton from "@/components/skeleton/Skeleton";
 
+const colorMap: { [key: string]: string } = {
+  red: "bg-red-500",
+  blue: "bg-blue-500",
+  yellow: "bg-yellow-500",
+  green: "bg-green-500",
+};
+
 const Timeline: React.FC = () => {
   const [timelineData, setTimelineData] = useState<TimelineInterface[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -24,7 +31,7 @@ const Timeline: React.FC = () => {
   }, []);
 
   if (!timelineData) {
-    <div>Loading....</div>;
+    return <div>Loading....</div>;
   }
 
   return (
@@ -37,7 +44,9 @@ const Timeline: React.FC = () => {
               <div className="flex items-start">
                 <div
                   className={`w-3 h-3 rounded-full mt-1 mr-4 ${
-                    isLoading ? "bg-gray-300 animate-pulse" : `bg-${item.color}-500`
+                    isLoading
+                      ? "bg-gray-300 animate-pulse"
+                      : colorMap[item.color] || "bg-gray-500"
                   }`}
                 />
 
