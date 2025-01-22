@@ -45,7 +45,7 @@ const UserNavbar: React.FC<userNavbarProps> = ({ openModal }) => {
       </div>
 
       <div className="hidden lg:flex items-center gap-5">
-        <button className="bg-white h-[30px] w-[30px] flex items-center justify-center rounded-lg box-shadow-sm">
+        <button className="bg-white h-[50px] w-[50px] flex items-center justify-center rounded-lg box-shadow-sm">
           <HiOutlineDotsVertical size={"20px"} />
         </button>
 
